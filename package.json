@@ -13,5 +13,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/emilenriquez/react-stack#readme"
+  "homepage": "https://bitbucket.org/emilenriquez/react-stack#readme",
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0"
+  }
 }
