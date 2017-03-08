@@ -1,18 +1,19 @@
 import React from 'react';
 
+
 /**
 *a sample counter button
 */
 
-class Hello extends React.Component {
+class Home extends React.Component {
 	constructor() {
 		super();
 	}
 
 	render (){
 		return (
-			<h2>HELLO!!!</h2>
-		);
+			<h2>THIS IS THE HOMEPAGE</h2>
+		)
 	}
 }
-export default Hello;
+export default Home;
