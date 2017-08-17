@@ -1,8 +1,7 @@
 import React from 'react';
-
-
+import Board from './Board';
 /**
-*a sample counter button
+* the root contents
 */
 
 class Home extends React.Component {
@@ -12,7 +11,7 @@ class Home extends React.Component {
 
 	render (){
 		return (
-			<h2>THIS IS THE HOMEPAGE</h2>
+      <Board/>
 		)
 	}
 }

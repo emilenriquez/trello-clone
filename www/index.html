@@ -3,13 +3,99 @@
   <title> </title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./public/app.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div id="container">
 
-  <div id="container"></div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4">
+        <div class="card column">
+          <div class="card-header no-sortable">
+            Backlog
+          </div>
+          <div class="portlet">
+            <div class="portlet-header">Feeds</div>
+            <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+          </div>
+
+          <div class="portlet">
+            <div class="portlet-header">News</div>
+            <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+          </div>
+
+        </div>
+      </div>
 
 
-  <script src="/bundle.js" ></script> 
+      <div class="column">
+
+        <div class="portlet">
+          <div class="portlet-header">Shopping</div>
+          <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+        </div>
+
+      </div>
+
+      <div class="column">
+
+        <div class="portlet">
+          <div class="portlet-header">Links</div>
+          <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+        </div>
+
+        <div class="portlet">
+          <div class="portlet-header">Images</div>
+          <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="/bundle.js" ></script>
+  <script>
+    $( ".column" ).sortable({
+      connectWith: ".column",
+      handle: ".portlet-header",
+      cancel: ".no-sortable",
+      items: ".portlet",
+      start: function (event, ui) {
+        ui.item.addClass('tilt');
+      },
+      stop: function (event, ui) {
+        ui.item.removeClass('tilt');
+      }
+    });
+
+    $( ".portlet" )
+      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+      .find( ".portlet-header" )
+        .addClass( "ui-widget-header ui-corner-all" )
+        .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle no-sortable'></span>");
+
+    $( ".portlet-toggle" ).click(function() {
+      var icon = $( this );
+      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+      icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
+    });
+
+  </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Router, Route} from 'react-router';
 /**
-*a sample counter button
+* Main  App template file
 */
 
 class Main extends React.Component {
@@ -14,8 +14,7 @@ class Main extends React.Component {
       <div>
         <nav className="navbar navbar-light bg-faded">
             <a className="navbar-brand" href="#">
-              <img src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/>
-              &nbsp; ReactBoil
+              <h5 className="m-0">  TRELLO CLONE </h5>
             </a>
         </nav>
         <div className="container">
